@@ -6,9 +6,10 @@ for (let a of tagsA) {
         
         let toolstip = document.querySelector('.tooltip_active')
         if (toolstip) {
-            toolstip.classList.remove('tooltip_active');
+            toolstip.classList.toggle('tooltip_active');
+        } else {
+            a.insertAdjacentHTML('afterend', `<div class="tooltip tooltip_active" style="left: ${coords.left}px; top: ${coords.bottom}px">${a.title}</div>`) // style="left: 0; top: 0" //left: ${a.offsetLeft}; top: ${top + 10 - scrollTop}
         }
-        a.insertAdjacentHTML('afterend', `<div class="tooltip tooltip_active" style="left: ${coords.left}px; top: ${coords.bottom}px">${a.title}</div>`) // style="left: 0; top: 0" //left: ${a.offsetLeft}; top: ${top + 10 - scrollTop}
         return false
     }
 }

@@ -20,18 +20,10 @@ function newTask(text) {
     })
 }
 
-input.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
-        if (input.value.trim() != "") {
-            newTask(input.value.trim())
-            input.value = ""
-        }
-    }
-});
-
-button.addEventListener('click', () => {
+button.addEventListener('click', (event) => {
     if (input.value.trim() != "") {
         newTask(input.value.trim())
         input.value = ""
+        event.preventDefault()
     }
 })
