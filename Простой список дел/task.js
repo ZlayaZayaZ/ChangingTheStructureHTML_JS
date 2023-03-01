@@ -24,6 +24,6 @@ button.addEventListener('click', (event) => {
     if (input.value.trim() != "") {
         newTask(input.value.trim())
         input.value = ""
-        event.preventDefault()
     }
+    event.preventDefault()
 })
